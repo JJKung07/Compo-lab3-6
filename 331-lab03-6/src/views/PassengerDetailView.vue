@@ -51,4 +51,5 @@ onMounted(async () => {
       <p><strong>Established:</strong> {{ airline.established }}</p>
     </div>
   </div>
+  <router-link to="/">Go to Home</router-link>
 </template>
