@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PassengerView from '@/views/PassengerView.vue'
 import PassengerDetailView from '@/views/PassengerDetailView.vue'
-import AirplaneDetailView from '@/views/AirplaneDetailView.vue'
+import AirplaneDetailView from '@/views/AirlineDetailView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 
 const router = createRouter({
