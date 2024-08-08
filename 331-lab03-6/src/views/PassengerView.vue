@@ -16,9 +16,15 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-for="passenger in passengers" :key="passenger._id">
+  <div class="passengers" v-for="passenger in passengers" :key="passenger._id">
     <PassengerCard :passenger="passenger" />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.passengers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>

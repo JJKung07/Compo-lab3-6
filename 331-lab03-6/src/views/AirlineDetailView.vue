@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted, defineProps } from 'vue';
-import type { Airline } from '@/types';
-import PassengerService from '@/services/PassengerService';
+import { ref, onMounted, defineProps } from 'vue'
+import type { Airline } from '@/types'
+import PassengerService from '@/services/PassengerService'
 
 const airline = ref<Airline | null>(null);
 const error = ref<string | null>(null);
@@ -38,7 +38,9 @@ onMounted(async () => {
     <p><strong>Country:</strong> {{ airline.country }}</p>
     <p><strong>Slogan:</strong> {{ airline.slogan }}</p>
     <p><strong>Headquarters:</strong> {{ airline.head_quaters }}</p>
-    <p><strong>Website:</strong> <a :href="airline.website" target="_blank">{{ airline.website }}</a></p>
+    <p>
+      <strong>Website:</strong> <a :href="airline.website" target="_blank">{{ airline.website }}</a>
+    </p>
     <p><strong>Established:</strong> {{ airline.established }}</p>
   </div>
 </template>
