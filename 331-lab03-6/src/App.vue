@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import 'nprogress/nprogress.css'
 </script>
 
 <template>
   <div id="layout">
     <header>
       <div class="wrapper">
-        
+        <RouterView />
       </div>
     </header>
-    <RouterView />
   </div>
 </template>
 
