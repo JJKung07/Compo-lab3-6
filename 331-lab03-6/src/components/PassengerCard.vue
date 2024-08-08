@@ -1,12 +1,19 @@
 <script setup lang="ts">
-import Passenger from '@/types/Passenger';
-defineProps<{
+import Passenger from '@/types/Passenger'
+import { useRouter } from 'vue-router'
+const props = defineProps<{
   passenger: Passenger
-}>()
+}>();
+
+const router = useRouter();
+const navigateToPassengerDetail = () => {
+  router.push({ name: 'passenger-detail', params: { id: props.passenger._id } });
+};
 </script>
 
+
 <template>
-    <div class="event-card">
+    <div class="event-card" @click="navigateToPassengerDetail">
       <h3>Name: {{ passenger.name }}</h3>
       <h3>ID: {{ passenger._id }}</h3>
       <h3>Trips: {{ passenger.trips }}</h3>

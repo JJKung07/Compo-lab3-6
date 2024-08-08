@@ -6,7 +6,11 @@ import { RouterLink, RouterView } from 'vue-router'
   <div id="layout">
     <header>
       <div class="wrapper">
-        
+        <nav>
+          <RouterLink :to="{ name: 'passenger-view' }"
+            >Passenger</RouterLink
+          >
+        </nav>
       </div>
     </header>
     <RouterView />
