@@ -106,10 +106,10 @@ onMounted(async () => {
 }
 
 @media (min-width: 1024px) {
-    #app {
-        display: grid;
-        grid-template-columns: 1fr;
-        padding: 0 2rem;
-    }
+  #app {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 2rem;
+  }
 }
 </style>

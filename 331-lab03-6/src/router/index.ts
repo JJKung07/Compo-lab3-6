@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import PassengerView from '@/views/PassengerView.vue'
+import PassengerView from '../views/PassengerView.vue'
 import PassengerDetailView from '@/views/PassengerDetailView.vue'
-import AirplaneDetailView from '@/views/AirlineDetailView.vue'
-import NotFoundView from '@/views/NotFoundView.vue'
 import PassengerEditView from '@/views/PassengerEditView.vue'
+import AirlineDetailView from '@/views/AirlineDetailView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 import nProgress from 'nprogress'
 
 const router = createRouter({
@@ -19,13 +18,12 @@ const router = createRouter({
       path: '/passenger/:_id',
       name: 'passenger-detail-view',
       component: PassengerDetailView,
-      props: true
-      ,
+      props: true,
       children: [
         {
           path: 'airline/:airlineId',
           name: 'airline-detail-view',
-          component: AirplaneDetailView,
+          component: AirlineDetailView,
           props: true
         }
       ]
@@ -41,8 +39,21 @@ const router = createRouter({
       name: 'not-found',
       component: NotFoundView
     }
-  ]
+  ],
+  
+  scrollBehavior(to, from, savedPosition) {
+  console.log('scrollBehavior called:', { to, from, savedPosition });
+  if (savedPosition) {
+    console.log('Restoring to savedPosition:', savedPosition);
+    return savedPosition;
+  } else {
+    console.log('Scrolling to top');
+    return { top: 0 };
+  }
+  }
+
 })
+
 router.beforeEach(() => {
   nProgress.start()
 })
