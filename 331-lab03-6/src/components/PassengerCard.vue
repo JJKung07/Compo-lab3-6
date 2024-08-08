@@ -6,14 +6,19 @@ defineProps<{
 </script>
 
 <template>
+  <RouterLink class="passenger-link" :to="{name: 'passenger-detail-view', params: { _id: passenger._id}}">
     <div class="event-card">
       <h3>Name: {{ passenger.name }}</h3>
       <h3>ID: {{ passenger._id }}</h3>
       <h3>Trips: {{ passenger.trips }}</h3>
     </div>
+  </RouterLink>
 </template>
 
 <style scoped>
+.passenger-link {
+  color: black;
+}
 .event-card {
   padding: 20px;
   width: auto;
